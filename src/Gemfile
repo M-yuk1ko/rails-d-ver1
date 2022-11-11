@@ -83,3 +83,9 @@ group :test do
   gem "webdrivers", "~> 5.2.0"
 
 end
+
+#機能実装用に追加
+gem 'devise' # ユーザ登録
+gem "refile", require: "refile/rails", github: 'manfe/refile' # 画像投稿
+gem "refile-mini_magick" # サイズ調整など画像加工
+gem "bulma-rails" # CSSフレームワーク
