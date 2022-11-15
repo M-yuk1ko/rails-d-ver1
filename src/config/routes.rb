@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   get '/', to: 'users#index'
   # Defines the root path route ("/")
   # root "articles#index"
+
+  #デバイス設定用
+  root to: "home#index"
 end

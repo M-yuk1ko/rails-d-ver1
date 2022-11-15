@@ -10,6 +10,17 @@
   </head>
 
   <body>
+  <% if flash[:notice] %>
+    <div class="notification is-info">
+      <p class="notice"><%= notice %></p>
+    </div>
+  <% end %>
+  <% if flash[:alert] %>
+    <div class="notification is-danger">
+      <p class="alert"><%= alert %></p>
+    </div>
+  <% end %>
+
     <header class="page-header","wrapper">
     <h2>
       <a href=""><img class="logo" src="" alt="【ロゴ】web_title"></a>
