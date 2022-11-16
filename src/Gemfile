@@ -89,4 +89,5 @@ gem 'devise' # ユーザ登録
 gem "refile", require: "refile/rails", :git => 'https://github.com/manfe/refile.git' # 画像投稿
 gem "refile-mini_magick" # サイズ調整など画像加工
 gem "bulma-rails" # CSSフレームワーク
-
+gem 'rails_admin', '~> 3.0' # testエラー解消のため管理画面を追加
+gem "sassc-rails"
