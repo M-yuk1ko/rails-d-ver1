@@ -310,7 +310,6 @@ DEPENDENCIES
   public_suffix (~> 5.0.0)
   puma (~> 5.6.5)
   rails (~> 7.0.4)
-  rails_admin (~> 3.0)
   refile!
   refile-mini_magick
   regexp_parser (~> 2.6.0)
