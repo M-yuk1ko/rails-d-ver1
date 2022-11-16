@@ -40,9 +40,4 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  ## == CIエラー対応/一意の引数”email”重複避け ==
-  config.model 'users' do
-    exclude_fields :email
-  end
-
 end

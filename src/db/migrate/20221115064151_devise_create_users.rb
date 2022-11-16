@@ -37,6 +37,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.timestamps null: false
     end
 
+# indexを張ることで特定のカラムからデータを取得したいときに、テーブルの中の特定のカラムのデータを複製して、検索が行いやすいようにする。
+## 例えば多くのデータを格納しているカラムで検索したい値があるときに、カラムを複製してアルファベット順にして検索のしやすい環境を作る。
+### add_index :テーブル名, カラム名, 必要ならオプション名
+
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true

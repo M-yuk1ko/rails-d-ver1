@@ -1,14 +1,14 @@
-# MySQL. Versions 5.5.8 and up are supported.
-#
-# Install the MySQL driver
-#   gem install mysql2
-#
-# Ensure the MySQL gem is defined in your Gemfile
-#   gem "mysql2"
-#
-# And be sure to use new-style password hashing:
-#   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
-#
+# MySQL。バージョン 5.5.8 以降がサポートされています。
+# MySQL ドライバーをインストールする
+# gem install mysql2
+
+# MySQL gem が Gemfile で定義されていることを確認します
+# gem "mysql2"
+
+# そして、必ず新しいスタイルのパスワードハッシュを使用してください:
+# https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
+
+
 default: &default
   adapter: mysql2
   encoding: utf8mb4
@@ -21,34 +21,34 @@ development:
   <<: *default
   database: app_development
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
+# 警告: 「test」として定義されたデータベースは消去され、
+# "rake" を実行すると、開発データベースから再生成されます。
+# このデータベースを開発または本番と同じに設定しないでください。
+
 test:
   <<: *default
   database: app_test
   host: <%= ENV.fetch("APP_DATABASE_HOST") { 'db' } %>
 
-# As with config/credentials.yml, you never want to store sensitive information,
-# like your database password, in your source code. If your source code is
-# ever seen by anyone, they now have access to your database.
+# config/credentials.yml と同様に、機密情報を保存したくありません。
+# データベースのパスワードのように、ソース コードに。ソースコードが
+# 誰もが見たことのある人は、あなたのデータベースにアクセスできるようになりました。
 #
-# Instead, provide the password or a full connection URL as an environment
-# variable when you boot the app. For example:
+# 代わりに、パスワードまたは完全な接続 URL を環境として提供します
+# アプリ起動時の変数。例えば：
+# DATABASE_URL="mysql2://myuser:mypass@localhost/somedatabase"
 #
-#   DATABASE_URL="mysql2://myuser:mypass@localhost/somedatabase"
+# 特別な DATABASE_URL 環境で接続 URL を指定する場合
+# 変数、Rails は自動的に設定値を上にマージします
+# このファイルで提供される値。または、接続を指定することもできます
+# URL 環境変数を明示的に:
 #
-# If the connection URL is provided in the special DATABASE_URL environment
-# variable, Rails will automatically merge its configuration values on top of
-# the values provided in this file. Alternatively, you can specify a connection
-# URL environment variable explicitly:
+# production:
+# URL: <%= ENV["MY_APP_DATABASE_URL"] %>
 #
-#   production:
-#     url: <%= ENV["MY_APP_DATABASE_URL"] %>
-#
-# Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
-# for a full overview on how database connection configuration can be specified.
-#
+# https://guides.rubyonrails.org/configuring.html#configuring-a-database を読む
+# データベース接続構成を指定する方法の完全な概要については、.
+
 production:
   <<: *default
   database: <%= ENV["APP_DATABASE"] %>
