@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>demoAPP01</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+  <% if flash[:notice] %>
+    <div class="notification is-info">
+      <p class="notice"><%= notice %></p>
+    </div>
+  <% end %>
+  <% if flash[:alert] %>
+    <div class="notification is-danger">
+      <p class="alert"><%= alert %></p>
+    </div>
+  <% end %>
+
+    <header class="page-header","wrapper">
+    <h2>
+      <a href=""><img class="logo" src="" alt="【ロゴ】web_title"></a>
+    </h2>
+    <nav>
+      <ul class="main-nav">
+        <li><a href="">News</a></li>
+        <li><a href="">会員登録</a></li>
+        <li><a href="">ログイン</a></li>
+      </ul>
+    </nav>
+    </header>
+
+    <%= yield %>
+
+    <footer>
+      <p>footer</p>
+    </footer>
+
+  </body>
+</html>
