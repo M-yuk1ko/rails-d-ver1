@@ -1,4 +1,4 @@
-ActiveModel.register AdminUser do
+ActiveModel.register AdminUsers do
   permit_params :email, :password, :password_confirmation
 
   index do
